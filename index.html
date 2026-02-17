@@ -860,6 +860,11 @@
             100% { transform: rotate(360deg); }
         }
     </style>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5E3FDE">
+<link rel="apple-touch-icon" href="https://i.ibb.co/F4b8wMcd/imagine-draw-chat-app-logo-1755450297617-removebg-preview.png">
+
 </head>
 <body>
     <!-- Authentication View -->
@@ -1889,5 +1894,16 @@ const firebaseConfig = {
             });
         }
     </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch(err => console.log("SW failed:", err));
+  });
+}
+</script>
+
 </body>
-</html>
+    </html>
