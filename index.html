@@ -1896,14 +1896,16 @@ const firebaseConfig = {
     </script>
 
 <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then(() => console.log("Service Worker Registered"))
-      .catch(err => console.log("SW failed:", err));
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registered successfully');
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
   });
 }
 </script>
-
 </body>
     </html>
