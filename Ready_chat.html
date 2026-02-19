@@ -7,6 +7,10 @@
     <link rel="icon" type="image/png" href="https://i.ibb.co/F4b8wMcd/imagine-draw-chat-app-logo-1755450297617-removebg-preview.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d6efd">
+
     <!-- QR Code Generation Library -->
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <style>
@@ -1889,5 +1893,17 @@ const firebaseConfig = {
             });
         }
     </script>
+      <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registered successfully');
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+      </script>
 </body>
 </html>
